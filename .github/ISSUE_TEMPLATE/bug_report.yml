@@ -1,0 +1,160 @@
+name: "🐞 Reporte de Bug"
+description: "Reporte um defeito com contexto de negócio e impacto no ERP B2B."
+title: "[Bug]: "
+labels:
+  - "type:bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Informe o bug de forma objetiva e reproduzível. Priorize o menor contexto necessário para corrigir no MVP.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: "Descrição (o quê/por quê)"
+      description: "O que aconteceu e por que isso é um problema para o negócio?"
+      placeholder: "Comportamento observado + impacto"
+    validations:
+      required: true
+
+  - type: textarea
+    id: comportamento_esperado
+    attributes:
+      label: "Comportamento esperado"
+      placeholder: "Descreva o resultado correto esperado"
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: "Passos para reproduzir"
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: regras
+    attributes:
+      label: "Regras de negócio + exceções afetadas"
+      placeholder: |
+        Regra afetada:
+        Exceções afetadas:
+    validations:
+      required: true
+
+  - type: textarea
+    id: contratos_api
+    attributes:
+      label: "Contratos de API impactados (endpoints, payloads, erros, idempotência)"
+      placeholder: |
+        Endpoint:
+        Payload:
+        Erro retornado:
+        Erro esperado:
+        Idempotência envolvida?:
+    validations:
+      required: true
+
+  - type: textarea
+    id: dados
+    attributes:
+      label: "Modelo de dados / entidades impactadas"
+      placeholder: "Ex.: entidade, coluna, relacionamento, migração"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: multitenant
+    attributes:
+      label: "Checklist multi-tenant"
+      options:
+        - label: "Tenant foi resolvido corretamente no cenário do bug"
+          required: true
+        - label: "TenantId está presente/validado no fluxo afetado"
+          required: true
+        - label: "Consultas afetadas usam filtro por TenantId"
+          required: true
+        - label: "Logs/auditoria do caso incluem TenantId"
+          required: true
+        - label: "Reprodução/validação considera 2 tenants"
+          required: true
+
+  - type: textarea
+    id: seguranca
+    attributes:
+      label: "Segurança (RBAC/policies + auditoria)"
+      placeholder: "Há bypass de permissão? Houve falha de auditoria?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: aceite
+    attributes:
+      label: "Critérios de aceite da correção (Given/When/Then)"
+      placeholder: |
+        Given ...
+        When ...
+        Then ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencias_riscos
+    attributes:
+      label: "Dependências e riscos"
+      placeholder: "Dependências: ... | Riscos de regressão: ..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: "Prioridade"
+      options:
+        - "P0"
+        - "P1"
+        - "P2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: justificativa_prioridade
+    attributes:
+      label: "Justificativa da prioridade"
+      placeholder: "Impacto para operação/cliente/receita"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: "Módulo (label sugerida)"
+      options:
+        - "Plataforma"
+        - "Cadastros"
+        - "Comercial"
+        - "Estoque"
+        - "Compras"
+        - "Expedição/Logística"
+        - "Financeiro"
+        - "Relatórios"
+    validations:
+      required: true
+
+  - type: input
+    id: sprint
+    attributes:
+      label: "Sprint (label sugerida)"
+      placeholder: "sprint:1"
+
+  - type: textarea
+    id: evidencias
+    attributes:
+      label: "Evidências"
+      description: "Cole logs, mensagens de erro, payloads e prints (sem dados sensíveis)."
+      placeholder: "Stack trace, response body, correlation id..."

@@ -1,0 +1,149 @@
+name: "🛠️ Task de Engenharia"
+description: "Abra uma task técnica com escopo pequeno, claro e incremental para o MVP."
+title: "[Task]: "
+labels:
+  - "type:task"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use esta task para execução técnica (infra, refino de regra, ajuste de arquitetura, testes, observabilidade) sem superlotar requisitos.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: "Descrição (o quê/por quê)"
+      placeholder: "Objetivo técnico e resultado esperado"
+    validations:
+      required: true
+
+  - type: textarea
+    id: escopo
+    attributes:
+      label: "Escopo da task (inclui / não inclui)"
+      placeholder: |
+        Inclui:
+        -
+        Não inclui:
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: regras
+    attributes:
+      label: "Regras de negócio + exceções relacionadas"
+      placeholder: "Liste somente as regras necessárias para esta task"
+    validations:
+      required: true
+
+  - type: textarea
+    id: contratos_api
+    attributes:
+      label: "Contratos de API (se houver: endpoints, payloads, erros, idempotência)"
+      placeholder: "N/A quando não houver alteração de contrato"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dados
+    attributes:
+      label: "Modelo de dados / entidades impactadas"
+      placeholder: "N/A ou entidades/migrações/indexes"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: multitenant
+    attributes:
+      label: "Checklist multi-tenant"
+      options:
+        - label: "Método de resolução de tenant considerado no fluxo"
+          required: true
+        - label: "TenantId presente/validado nas entidades/consultas afetadas"
+          required: true
+        - label: "Filtros por TenantId garantidos"
+          required: true
+        - label: "Logs/auditoria incluem TenantId quando aplicável"
+          required: true
+        - label: "Teste/cenário validado com 2 tenants"
+          required: true
+
+  - type: textarea
+    id: seguranca
+    attributes:
+      label: "Segurança (RBAC/policies + auditoria)"
+      placeholder: "Policies afetadas, riscos e necessidade de trilha"
+    validations:
+      required: true
+
+  - type: textarea
+    id: aceite
+    attributes:
+      label: "Critérios de aceite (Given/When/Then)"
+      placeholder: |
+        Given ...
+        When ...
+        Then ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencias_riscos
+    attributes:
+      label: "Dependências e riscos"
+      placeholder: "Dependências técnicas/negócio e principais riscos"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: "Prioridade"
+      options:
+        - "P0"
+        - "P1"
+        - "P2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: justificativa_prioridade
+    attributes:
+      label: "Justificativa da prioridade"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: "Módulo (label sugerida)"
+      options:
+        - "Plataforma"
+        - "Cadastros"
+        - "Comercial"
+        - "Estoque"
+        - "Compras"
+        - "Expedição/Logística"
+        - "Financeiro"
+        - "Relatórios"
+    validations:
+      required: true
+
+  - type: input
+    id: sprint
+    attributes:
+      label: "Sprint (label sugerida)"
+      placeholder: "sprint:1"
+
+  - type: textarea
+    id: plano_execucao
+    attributes:
+      label: "Plano de execução (passos curtos)"
+      description: "Quebre em passos pequenos e sequenciais."
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true

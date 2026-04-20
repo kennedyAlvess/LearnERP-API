@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "📚 Diretrizes de requisitos e templates"
+    url: "https://github.com/kennedyAlvess/LearnERP-API/blob/main/CONTRIBUTING.md"
+    about: "Leia como abrir issues de qualidade para o MVP ERP B2B."
+  - name: "💬 Discussões gerais"
+    url: "https://github.com/kennedyAlvess/LearnERP-API/discussions"
+    about: "Use Discussions para perguntas abertas e alinhamentos não acionáveis."
