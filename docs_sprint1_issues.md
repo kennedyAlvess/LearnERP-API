@@ -229,7 +229,7 @@ Garantir isolamento automático entre tenants com filtro global de consultas e t
 
 ### Dependências / riscos
 - Dependências: S1-05.
-- Risco: alto crítico.
+- Risco: crítico.
 
 ---
 
@@ -360,11 +360,11 @@ Criar cadastro de clientes com score (0..1000), crédito calculado por faixa, ov
 ### Regras de negócio / exceções
 - `Score` obrigatório entre 0 e 1000.
 - Crédito calculado por faixas simples (config fixa na sprint):
-  - 0–499: 5.000
-  - 500–699: 20.000
-  - 700–799: 50.000
-  - 800–899: 100.000
-  - 900–1000: 200.000
+  - 0-499: 5000
+  - 500-699: 20000
+  - 700-799: 50000
+  - 800-899: 100000
+  - 900-1000: 200000
 - `CreditLimitOverride` (se informado) substitui calculado.
 - `IsBlocked=true` marca cliente indisponível para venda futura.
 - `DefaultDepositoId` opcional deve pertencer ao mesmo tenant.
@@ -453,7 +453,7 @@ Criar cadastro de taxa regional por UF (percentual) para cálculo de encargo de 
 
 ### Regras de negócio / exceções
 - 1 taxa por UF por tenant.
-- `RatePercent` entre 0 e 100.
+- `RatePercent` entre 0 e 100 (0 é permitido para cenários isentos).
 - UF deve ser válida (2 letras).
 
 ### Contrato de API
@@ -495,8 +495,8 @@ Cadastrar faixas de desconto por valor bruto do pedido, com validação de sobre
 
 ### Regras de negócio / exceções
 - Faixas não podem se sobrepor no mesmo tenant.
-- `DiscountPercent` entre 0 e 100.
-- Regra de aplicação futura: só para clientes com score bom (>=700).
+- `DiscountPercent` entre 0 e 100 (0 é permitido apenas para cenário isento/sem benefício).
+- Regra de aplicação futura: só para clientes com score `>=700`.
 
 ### Contrato de API
 - `POST /v1/descontos-faixa`
