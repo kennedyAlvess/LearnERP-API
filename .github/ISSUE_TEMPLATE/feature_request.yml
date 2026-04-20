@@ -1,0 +1,153 @@
+name: "✨ Solicitação de Feature"
+description: "Abra uma user story/feature alinhada ao MVP incremental do ERP B2B."
+title: "[Feature]: "
+labels:
+  - "type:feature"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este formulário para descrever uma evolução incremental (MVP), com foco em valor de negócio e escopo objetivo.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: "Descrição (o quê/por quê)"
+      description: "Explique o problema/oportunidade e o valor para o negócio."
+      placeholder: "Como [perfil], quero [objetivo], para [benefício]."
+    validations:
+      required: true
+
+  - type: textarea
+    id: regras
+    attributes:
+      label: "Regras de negócio + exceções"
+      description: "Liste regras claras e casos excepcionais."
+      placeholder: |
+        - Regra 1:
+        - Regra 2:
+        - Exceções:
+    validations:
+      required: true
+
+  - type: textarea
+    id: contratos_api
+    attributes:
+      label: "Contratos de API (endpoints, payloads, erros, idempotência)"
+      description: "Descreva mudanças esperadas nos contratos."
+      placeholder: |
+        Endpoints:
+        Payloads:
+        Erros (ProblemDetails):
+        Idempotência (Idempotency-Key, se aplicável):
+    validations:
+      required: true
+
+  - type: textarea
+    id: dados
+    attributes:
+      label: "Modelo de dados / entidades impactadas"
+      description: "Informe entidades, relacionamentos, migrações e índices relevantes."
+      placeholder: "Ex.: Client, Order, PriceListItem, índices por TenantId..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: multitenant
+    attributes:
+      label: "Checklist multi-tenant"
+      description: "Marque os itens obrigatórios para isolamento por tenant."
+      options:
+        - label: "Método de resolução de tenant definido (claim/subdomínio/header)"
+          required: true
+        - label: "TenantId presente e validado em entidades/dto relevantes"
+          required: true
+        - label: "Consultas aplicam filtros por TenantId (query filter/repositório)"
+          required: true
+        - label: "Logs/auditoria incluem TenantId"
+          required: true
+        - label: "Há teste/cenário com pelo menos 2 tenants"
+          required: true
+
+  - type: textarea
+    id: seguranca
+    attributes:
+      label: "Segurança (RBAC/policies + auditoria)"
+      description: "Indique permissões, políticas e trilha de auditoria necessárias."
+      placeholder: "Quem pode acessar? Quais policies? O que deve ser auditado?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: aceite
+    attributes:
+      label: "Critérios de aceite (Given/When/Then)"
+      description: "Defina critérios objetivos e testáveis."
+      placeholder: |
+        Given ...
+        When ...
+        Then ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencias_riscos
+    attributes:
+      label: "Dependências e riscos"
+      description: "Aponte bloqueios, integrações e riscos técnicos/negócio."
+      placeholder: "Dependências: ... | Riscos: ..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: "Prioridade"
+      description: "Escolha P0/P1/P2 e justifique no campo abaixo."
+      options:
+        - "P0"
+        - "P1"
+        - "P2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: justificativa_prioridade
+    attributes:
+      label: "Justificativa da prioridade"
+      placeholder: "Por que esta entrega é P0/P1/P2?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: "Módulo (label sugerida)"
+      description: "Selecione o módulo principal para facilitar triagem."
+      options:
+        - "Plataforma"
+        - "Cadastros"
+        - "Comercial"
+        - "Estoque"
+        - "Compras"
+        - "Expedição/Logística"
+        - "Financeiro"
+        - "Relatórios"
+    validations:
+      required: true
+
+  - type: input
+    id: sprint
+    attributes:
+      label: "Sprint (label sugerida)"
+      description: "Ex.: sprint:1, sprint:2"
+      placeholder: "sprint:1"
+
+  - type: textarea
+    id: escopo_mvp
+    attributes:
+      label: "Escopo incremental do MVP"
+      description: "Defina o menor incremento útil para entrega nesta issue."
+      placeholder: "Inclui: ... | Não inclui: ..."
+    validations:
+      required: true
