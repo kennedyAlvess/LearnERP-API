@@ -5,12 +5,12 @@
 
 ---
 
-## S1-01 Estrutura base da solução (.NET 8) + Health Check
+## S1-01 Estrutura base da solução (.NET 10) + Health Check
 **Prioridade:** P0  
 **Labels sugeridas:** sprint-1, P0, module:platform, testing
 
 ### Descrição (o que/por quê)
-Criar a fundação da API em .NET 8 com estrutura limpa para habilitar evolução incremental e testes desde o início.
+Criar a fundação da API em .NET 10 com estrutura limpa para habilitar evolução incremental e testes desde o início.
 
 ### Regras de negócio / exceções
 - Projeto inicial deve expor `GET /health` sem dependências de negócio.

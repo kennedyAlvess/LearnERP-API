@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="LearnERP.Api/LearnERP.Api.csproj" />
+  <Project Path="LearnERP.Application/LearnERP.Application.csproj" />
+  <Project Path="LearnERP.Domain/LearnERP.Domain.csproj" />
+  <Project Path="LearnERP.Infrastructure/LearnERP.Infrastructure.csproj" />
+  <Project Path="LearnERP.Tests/LearnERP.Tests.csproj" />
+</Solution>

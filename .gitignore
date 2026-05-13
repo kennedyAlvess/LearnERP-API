@@ -54,3 +54,5 @@ TestResult.xml
 nunit-*.xml
 /.github/agents/ERP-AGENT.agent.md
 /.vs
+/LearnERP.Api/appsettings.Development.json
+/LearnERP.Api/appsettings.json
