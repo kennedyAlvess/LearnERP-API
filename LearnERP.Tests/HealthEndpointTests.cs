@@ -4,14 +4,9 @@ using Xunit;
 
 namespace LearnERP.Tests;
 
-public sealed class HealthEndpointTests : IClassFixture<WebApplicationFactory<Program>>
+public sealed class HealthEndpointTests(WebApplicationFactory<Program> factory) : IClassFixture<WebApplicationFactory<Program>>
 {
-    private readonly WebApplicationFactory<Program> _factory;
-
-    public HealthEndpointTests(WebApplicationFactory<Program> factory)
-    {
-        _factory = factory;
-    }
+    private readonly WebApplicationFactory<Program> _factory = factory;
 
     [Fact]
     public async Task GetHealth_ReturnsOk()

@@ -56,3 +56,5 @@ nunit-*.xml
 /.vs
 /LearnERP.Api/appsettings.Development.json
 /LearnERP.Api/appsettings.json
+/.github
+/docs/governance

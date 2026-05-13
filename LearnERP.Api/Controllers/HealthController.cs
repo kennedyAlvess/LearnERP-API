@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LearnERP.Api.Controllers;
 
@@ -7,6 +8,7 @@ namespace LearnERP.Api.Controllers;
 public sealed class HealthController : ControllerBase
 {
     [HttpGet]
+    [AllowAnonymous]
     public IActionResult Get()
     {
         var status = new
